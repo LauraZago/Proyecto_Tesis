@@ -1,0 +1,37 @@
+version: '3'
+services:
+  db:
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=flectra
+      - POSTGRES_USER=flectra
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+    networks:
+      - flectra-network
+
+  flectra:
+    image: flectrahq/flectra:3.0
+    depends_on:
+      - db
+    ports:
+      - "7073:7073"
+    volumes:
+      - flectra-data:/var/lib/flectra
+      - ./flectra-addons:/mnt/extra-addons
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=flectra
+      - DB_PASSWORD=flectra
+    networks:
+      - flectra-network
+
+networks:
+  flectra-network:
+    driver: bridge
+
+volumes:
+  postgresql:
+  flectra-data:
