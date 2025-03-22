@@ -26,7 +26,6 @@ echo -e "\e[1;36m➤ Iniciando configuración de variables de Flectra...\e[0m"
 sleep 2
 
 ###### Base de datos ######
-echo
 echo -e "\e[1;36m➤ Ingrese el nombre que desea usar para la base de datos:\e[0m"
 echo -e "\e[1;30m  Ejemplo: postgresdb\e[0m"
 read -p " " replace
@@ -36,7 +35,6 @@ fi
 sleep 1
 
 ###### Usuario de base de datos######
-echo
 echo -e "\e[1;36m➤ Ingrese el nombre de usuario que desea usar para la base de datos:\e[0m"
 echo -e "\e[1;30m  Ejemplo: flectrauser\e[0m"
 read -p " " replace
@@ -47,7 +45,6 @@ sleep 1
 
 
 ###### Contraseña de base de datos######
-echo
 echo -e "\e[1;36m➤ Ingrese la contraseña que desea usar para la base de datos:\e[0m"
 echo -e "\e[1;30m  Ejemplo: flectrapassword\e[0m"
 read -p " " replace
