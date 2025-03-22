@@ -23,8 +23,15 @@ sleep 1
 # Comprobar la instalación de Docker
 echo "Probando Docker..."
 sleep 1
+
+echo
 sudo docker --version
 sleep 1
-sudo docker run hello-world
+
+echo
+sudo docker run hello-world --rm
+sleep 1
+
+echo
 echo "Docker está instalado y funcionando."
 sleep 3
