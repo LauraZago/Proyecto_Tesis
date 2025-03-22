@@ -64,9 +64,9 @@ sleep 15
 echo -e "\e[1;36m➤ Continuando script...\e[0m"
 sleep 2
 cd /opt/
-sudo curl -fsSL https://raw.githubusercontent.com/LauraZago/Proyecto_Tesis/refs/heads/dev/flectra-configurator.sh | sudo bash -s
-
 sudo curl -fsSL https://raw.githubusercontent.com/LauraZago/Proyecto_Tesis/refs/heads/dev/instalador-flectra.sh | sudo bash -s
+sleep 1
 
+echo 
 echo -e "\e[1;32m✔ Instalación de Flectra completada con éxito\e[0m"
 sleep 2

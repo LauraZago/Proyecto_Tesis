@@ -13,13 +13,6 @@ sleep 2
 echo -e "\e[1;36m➤ Este script configurará las variables .env para iniciar el contenedor de Flectra\e[0m"
 sleep 3
 
-# Cambiar a directorio de Flectra
-echo
-cd /opt/
-sudo mkdir flectra
-cd /opt/flectra
-sleep 1
-
 # Crear respaldo de archivo .env
 echo -e "\e[1;36m➤ Creando respaldo del archivo .env existente\e[0m"
 cp .env .env.bak && 
