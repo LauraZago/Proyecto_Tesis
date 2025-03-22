@@ -16,7 +16,7 @@ sleep 3
 # Cambiar a directorio de Flectra
 echo
 cd /opt/
-mkdir flectra
+sudo mkdir flectra
 cd /opt/flectra
 sleep 1
 
