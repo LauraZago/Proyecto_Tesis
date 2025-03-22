@@ -67,7 +67,7 @@ docker compose up -d
 sleep 1
 
 echo
-echo -e "\e[1;34m➤ Configura la instancia de Flectra de este servidor, a través de http://$(hostname  -I | cut -f1 -d' '):8080\e[0m"
+echo -e "\e[1;34m➤ Configura la instancia de Flectra de este servidor, a través de http://$(hostname  -I | cut -f1 -d' '):7073\e[0m"
 echo -e "\e[1;34m  Una vez iniciados los contenedores, recomendamos configurar la instancia de Flectra\e[0m"
 echo -e "\e[1;34m  con los datos de acceso y la configuración de la base de datos\e[0m"
 echo -e "\e[1;34m  para su correcto funcionamiento.\e[0m"
