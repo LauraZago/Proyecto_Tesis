@@ -7,14 +7,16 @@ postgres_password="flectrapassword"
 
 set -e
 echo -e "\e[1;35mFlectra - Configurator\e[0m"
-sleep 1
-echo -e "\e[0;35mInfluxDB Configurator 0.1 - Alpha\e[0m"
+echo
 sleep 2
 
 echo -e "\e[1;36m➤ Este script configurará las variables .env para iniciar el contenedor de Flectra\e[0m"
 sleep 3
 
 # Cambiar a directorio de Flectra
+echo
+cd /opt/
+mkdir flectra
 cd /opt/flectra
 sleep 1
 
