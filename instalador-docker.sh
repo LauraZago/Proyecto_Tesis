@@ -13,10 +13,10 @@ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+sudo apt-get update -qqqy
 
 # Instalar Docker
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -qqqy
 echo "Instalación de Docker completada."
 sleep 1
 
@@ -26,4 +26,5 @@ sleep 1
 sudo docker --version
 sleep 1
 sudo docker run hello-world
-echo "Docker está instalado y funcionando." 
+echo "Docker está instalado y funcionando."
+sleep 3
