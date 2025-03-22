@@ -21,14 +21,10 @@ sleep 2
 ###### Actualizar la lista de paquetes ######
 echo -e "\e[0;32m➤ Actualizando repositorios...\e[1;30m"
 sleep 2
-sudo apt update && 
+sudo apt update -qqqy && 
     echo "✔ Repositorios actualizados" || 
         echo -e "\e[0;31m✖  Hubo un problema al actualizar repositorios\e[0m"
 sleep 2
-
-echo -e "\e[1;34mLos siguientes paquetes serán actualizados:\e[0m"
-
-
 echo -e "\e[1;32mLos siguientes paquetes serán actualizados:\e[0m"
 sleep 2
 sudo apt list --upgradable
@@ -37,21 +33,28 @@ sleep 5
 # Actualizar los paquetes instalados
 echo -e "\e[0;32m➤ Actualizando paquetes...\e[0m"
 sleep 2
-
-sudo apt upgrade -y && 
+sudo apt upgrade -qqqy && 
     echo -e "\e[0;32m✔ Paquetes actualizados\e[0m" || 
         echo -e "\e[0;31m✖  Hubo un problema al actualizar los paquetes\e[0m"
-echo -e "\e[0;32m➤ Instalando paquetes pendientes...\e[0m"
-sleep 2
+
 
 # Instalar paquetes necesarios
-sudo apt install -y git curl wget ca-certificates && 
+echo -e "\e[0;32m➤ Instalando paquetes pendientes...\e[0m"
+sleep 2
+sudo apt install -qqqy git curl wget ca-certificates && 
     echo -e "\e[0;32m✔ Dependencias instaladas correctamente\e[0m" || 
         echo -e "\e[0;31m✖  Hubo un problema al instalar dependencias\e[0m"
 
+# Instalar Docker
+echo
+sleep 2
+echo -e "\e[1;36m➤ Iniciando la instalación de Docker, mediante script del proyecto...\e[1;30m"
+sudo curl -fsSL https://raw.githubusercontent.com/LauraZago/Proyecto_Tesis/refs/heads/dev/instalador-docker.sh | sudo bash -s
+echo -e "\e[0;32m✔ Se ha instalado la última versión de Docker\e[0m" || echo -e "\e[0;31m✖ Error al instalar la última versión de Docker\e[0m"
+echo
+sleep 2
 
-# Limpiar paquetes innecesarios
-sudo apt autoremove -y
-sudo apt autoclean
+# Notificar finalización
+echo -e "\e[1;32m✔ Actualización de paquetes y repositorios completada.\e[0m"
+sleep 2
 
-echo "Actualización de paquetes y repositorios completada."
