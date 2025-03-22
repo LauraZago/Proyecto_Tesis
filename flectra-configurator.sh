@@ -31,7 +31,7 @@ echo -e "\e[1;36m➤ Ingrese el nombre que desea usar para la base de datos:\e[0
 echo -e "\e[1;30m  Ejemplo: postgresdb\e[0m"
 read -p " " replace
 if [[ $postgres_db != "" && $replace != "" ]]; then
-  sed -i "s/$host/$replace/" $filename && 
+  sed -i "s/$postgres_db/$replace/" $filename && 
     echo -e "\e[0;32m✔ Nombre añadido al archivo \e[0m" || 
         echo -e "\e[0;31m✖ Hubo un problema al reemplazar el nombre\e[0m"
 fi
@@ -43,7 +43,7 @@ echo -e "\e[1;36m➤ Ingrese el nombre de usuario que desea usar para la base de
 echo -e "\e[1;30m  Ejemplo: flectrauser\e[0m"
 read -p " " replace
 if [[ $postgres_user != "" && $replace != "" ]]; then
-  sed -i "s/$host/$replace/" $filename && 
+  sed -i "s/$postgres_user/$replace/" $filename && 
     echo -e "\e[0;32m✔ Nombre de usuario añadido al archivo \e[0m" || 
         echo -e "\e[0;31m✖ Hubo un problema al reemplazar el nombre de usuario\e[0m"
 fi
@@ -56,7 +56,7 @@ echo -e "\e[1;36m➤ Ingrese la contraseña que desea usar para la base de datos
 echo -e "\e[1;30m  Ejemplo: flectrapassword\e[0m"
 read -p " " replace
 if [[ $postgres_password != "" && $replace != "" ]]; then
-  sed -i "s/$host/$replace/" $filename && 
+  sed -i "s/$postgres_password/$replace/" $filename && 
     echo -e "\e[0;32m✔ Contraseña añadida al archivo \e[0m" || 
         echo -e "\e[0;31m✖ Hubo un problema al reemplazar la contraseña\e[0m"
 fi
