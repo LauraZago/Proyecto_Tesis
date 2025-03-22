@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Desinstalar paquetes conflictivos
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg -qqqy; done
 
 # Cargar clave GPG de Docker
 sudo install -m 0755 -d /etc/apt/keyrings
